@@ -1,25 +1,56 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import CommentDetails from './CommentDetails'
+import faker from 'faker'
+import ApprovelCard from './ApprovelCard'
 
-function App() {
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="ui container comments">
+      <ApprovelCard>
+        <div>
+          <h4>Warning!!!</h4>
+          Are you sure you want to do this?
+        </div>
+      </ApprovelCard>
+      <ApprovelCard>
+        <CommentDetails 
+          avatar={faker.image.avatar()}
+          author="Ahmed"
+          time="Today at 6:00"
+          content="Nice Blog Post!"
+        />
+      </ApprovelCard>
+      
+       <ApprovelCard>
+        <CommentDetails 
+          avatar={faker.image.avatar()}
+          author="Noha"
+          time="Today at 8:00"
+          content="I like this subject"
+        />
+       </ApprovelCard>
+       
+       <ApprovelCard>
+        <CommentDetails 
+          avatar={faker.image.avatar()}
+          author="Mahmoud"
+          time="Today at 2:00"
+          content="I am writing"
+        />
+       </ApprovelCard>
+
+       <ApprovelCard>
+        <CommentDetails 
+          avatar={faker.image.avatar()}
+          author="Hassan"
+          time="Today at 10:00"
+          content="Nice Blog Post!"
+        />
+       </ApprovelCard>
+      
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
